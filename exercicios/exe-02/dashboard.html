@@ -1,0 +1,46 @@
+<html>
+    <!--
+        Alunos: Fábio Fischer, Andrey Bauler
+        Programação III
+        Exercício 02
+    -->
+
+    <head>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="dashboard.js"></script>
+    </head>
+    <body>
+        <div class="app-wrapper">
+
+            <div class="header-wrapper">
+                <button class="default-button" onclick="goBack()">Sair do Sistema</button>
+                <div class="flex-spacer"></div>
+                <nav class="top-menu-bar">
+                    <a href="#">INSTITUCIONAL</a>
+                    <a href="#">CURSOS</a>
+                    <a href="#">SERVIÇOS</a>
+                    <a href="#">INOVAÇÃO E PESQUISA</a>
+                    <a href="#">RELAÇÃO COM A COMUNIDADE</a>
+                </nav>
+            </div>
+
+            <div class="body-wrapper">
+                <div class="form-wrap">
+                    <h1>Cadastro de Heróis</h1>
+    
+                    <form action="">
+                        <input type="text" placeholder="Nome">
+                        <input type="text" placeholder="Gênero">
+                        <input type="text" placeholder="Idade">
+                        <input type="text" placeholder="Poderes">
+                        <input type="text" placeholder="História">
+                        <input class="default-button" type="button" value="Cadastrar Herói" onClick=newHero()>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>

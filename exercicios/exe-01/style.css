@@ -1,0 +1,158 @@
+/*
+    Alunos: Fábio Fischer, Andrey Bauler
+    Programação III
+    Exercício 01
+*/
+
+body {
+    margin: 0 !important;
+}
+
+.flex-spacer {
+    flex-grow: 1;
+}
+
+.top-header-bar {
+    background-color: rgb(0, 95, 164);
+    color: rgb(255, 255, 255);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 16px;
+}
+
+.body-wrapper {
+    background-color: rgb(255, 255, 255);
+    padding: 25px 20px;
+    display:-webkit-flex;
+    -webkit-justify-content:center;
+    display:flex;
+    justify-content:center;
+}
+
+.top-menu-bar {
+    width: 100%;
+    background-color: rgb(0, 84, 154);
+    border-bottom: 3px solid #FFCC00;
+    text-align: center;
+}
+
+.top-menu-bar a {
+    padding: 0px 12px;
+    color: #FFF;
+    text-decoration: none;
+    font: bold 11px Arial, Helvetica, sans-serif;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+}
+
+.top-search-form {
+    padding: 10px;
+    background-color: rgb(0, 84, 154);
+}
+
+.top-search-form label {
+    font: 10pt Verdana, Geneva, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: default;
+    margin: 0px;
+}
+
+.top-search-form input {
+    font: 11px Arial, Helvetica, sans-serif;
+    border: 0px;
+    color: rgb(102, 102, 102);
+}
+
+.top-search-form button {
+    background: #fee800;
+    color: rgb(0, 84, 154);
+    border: 0px;
+    cursor: pointer;
+}
+
+.route-toolbar {
+    font: 10pt Verdana, Geneva, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    background-color: #F6F6F1;
+    height: 40px;
+}
+
+.route-toobar-wrapper {
+    width: 100%;    
+    padding: 12px 10px;
+}
+
+.toolbar-nav a {
+    font: 10pt Verdana, Geneva, sans-serif;
+    color: rgb(0, 84, 154);
+    text-decoration: none;
+    text-align: center;
+    font-size: 10px;
+}
+
+.body-left-col {
+    font: 10pt Verdana, Geneva, sans-serif;
+    color: #333333;
+    line-height: 175%;
+}
+
+.body-left-col p {
+    margin: 0;
+    height: 15px;
+    font-size: 10px;
+}
+
+.body-central-col {
+    padding: 0px 30px;
+}
+
+.body-central-col h1 {
+    font: 15pt Arial, Helvetica, sans-serif;
+    color: #00549a;
+    line-height: 150%;
+}
+
+.body-central-col p {
+    font: 10pt Verdana, Geneva, sans-serif;
+    color: #605783;
+    line-height: 155%;
+}
+
+.body-right-col {
+    padding: 0px 30px;    
+    width: 200px;
+    font-size: 14px;
+    line-height: normal;
+    padding-bottom: 35px;
+}
+
+.body-right-col ul {
+    padding: 0;
+    list-style-type: none;
+    border-top: 1px solid rgb(214, 211, 184);
+}
+
+.body-right-col li {
+    border-bottom: 1px solid rgb(214, 211, 184);
+    text-align: -webkit-match-parent;
+}
+
+.body-right-col a {
+    font: 10pt Verdana, Geneva, sans-serif;
+    line-height: normal;
+    text-decoration: none;
+    color: #00549A;
+    display: block;
+    padding: 10px 15px;
+}
+
+.body-right-col-selected {
+    background-color: #F6F6F1;
+    font-weight: bold !important;
+    border-left: 1px solid #D6D3B8;
+    border-right: 1px solid #D6D3B8;
+}
