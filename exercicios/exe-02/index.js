@@ -1,5 +1,5 @@
 /*
-    Alunos: Fábio Fischer, Andrey Bauler
+    Fábio Fischer
     Programação III
     Exercício 02
 */
