@@ -4,6 +4,8 @@
     Exercício 02
 */
 
+window.sessionStorage.clear;
+
 function submitLogin() {
     let userValue = document.getElementById("authentication-user-input") ? document.getElementById("authentication-user-input").value : undefined;
     let passwordValue = document.getElementById("authentication-password-input") ? document.getElementById("authentication-password-input").value : undefined;
@@ -14,8 +16,4 @@ function submitLogin() {
     } else {
         alert('Preencha os campos para entrar no sistema')
     }
-}
-
-function newHero() {
-
 }

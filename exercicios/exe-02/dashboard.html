@@ -27,17 +27,36 @@
             </div>
 
             <div class="body-wrapper">
+                
                 <div class="form-wrap">
                     <h1>Cadastro de Heróis</h1>
     
                     <form action="">
-                        <input type="text" placeholder="Nome">
-                        <input type="text" placeholder="Gênero">
-                        <input type="text" placeholder="Idade">
-                        <input type="text" placeholder="Poderes">
-                        <input type="text" placeholder="História">
-                        <input class="default-button" type="button" value="Cadastrar Herói" onClick=newHero()>
+                        <input id="hero-name" type="text" placeholder="Nome">
+                        <input id="hero-gender" type="text" placeholder="Gênero">
+                        <input id="hero-age" type="number" placeholder="Idade">
+                        <input id="hero-powers" type="text" placeholder="Poderes">
+                        <input id="hero-background" type="text" placeholder="História">
+                        <input id="hero-name" class="default-button" type="button" value="Cadastrar Herói" onClick=newHero()>
                     </form>
+                </div>
+
+                <div class="flex-spacer"></div>
+
+                <div class="data-result">
+                    <h1>Dados de Heróis</h1>
+
+                    <table border='1' style="width:100%" id='mytable'>
+                        <tbody>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Genero</th>
+                                <th>Idade</th>
+                                <th>poderes</th>
+                                <th>História</th>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
