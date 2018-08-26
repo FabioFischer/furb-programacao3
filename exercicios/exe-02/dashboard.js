@@ -7,9 +7,13 @@
 let heroesStorageKey = 'my-heroes'
 let localSessionStorageKey = 'local-session'
 
-if (!window.sessionStorage.getItem(localSessionStorageKey)) {
-    alert('Sua sessão não esta ativa');
-    window.location.replace("./index.html");
+window.onload = function () { 
+    if (!window.sessionStorage.getItem(localSessionStorageKey)) {
+        alert('Sua sessão não esta ativa');
+        window.location.replace("./index.html");
+    } else {
+        refreshResultData();
+    }
 }
 
 function Hero(name, gender, age, powers, background) {
@@ -41,20 +45,45 @@ function newHero() {
     refreshResultData();
 }
 
-function clearData() {
-    tableBody = document.getElementsByTagName("tbody").item(0);
+function buildTableHeaders(tableBody) {
+    row = document.createElement("tr");
 
-    if (!tableBody) return;
+    let cell = document.createElement("th")
+    cell.appendChild(
+        document.createTextNode('Nome')
+    );
+    row.appendChild(cell);
 
-    var new_tbody = document.createElement('tbody');
-    populate_with_new_rows(new_tbody);
-    old_tbody.parentNode.replaceChild(new_tbody, old_tbody)
+    cell = document.createElement("th")
+    cell.appendChild(
+        document.createTextNode('Genero')
+    );
+    row.appendChild(cell);
+
+    cell = document.createElement("th")
+    cell.appendChild(
+        document.createTextNode('Idade')
+    );
+    row.appendChild(cell);
+
+    cell = document.createElement("th")
+    cell.appendChild(
+        document.createTextNode('Poderes')
+    );
+    row.appendChild(cell);
+
+    cell = document.createElement("th")
+    cell.appendChild(
+        document.createTextNode('História')
+    );
+    row.appendChild(cell);
+    
+    tableBody.appendChild(row);
 }
 
-function addDataRow(data) {
+function addDataRow(tableBody, data) {
     if (!data || !document.getElementsByTagName) return;
 
-    tableBody = document.getElementsByTagName("tbody").item(0);
     row = document.createElement("tr");
     
     for (let key of Object.getOwnPropertyNames(new Hero())) {
@@ -73,11 +102,18 @@ function refreshResultData() {
     let rawJson = window.localStorage.getItem(heroesStorageKey);
     let heroes = rawJson ? JSON.parse(rawJson) : [];
 
-    console.log(heroes)
-
     if (heroes && heroes.length > 0) {
+        let oldTableBody = document.getElementsByTagName("tbody").item(0);
+
+        if (!oldTableBody) return;
+
+        let newTableBody = document.createElement('tbody');
+
+        buildTableHeaders(newTableBody);
+
         for (let hero of heroes) {
-            addDataRow(hero);
+            addDataRow(newTableBody, hero);
         }
+        oldTableBody.parentNode.replaceChild(newTableBody, oldTableBody);
     }
 }
