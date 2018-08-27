@@ -6,6 +6,7 @@
 
 let heroesStorageKey = 'my-heroes'
 let localSessionStorageKey = 'local-session'
+let localSelectedMenuStorageKey = 'local-selected-menu'
 
 window.onload = function () { 
     if (!window.sessionStorage.getItem(localSessionStorageKey)) {
@@ -13,9 +14,21 @@ window.onload = function () {
         window.location.replace("./index.html");
     } else {
         refreshResultData();
+
+        let selectedMenu = window.localStorage.getItem(localSelectedMenuStorageKey);
+        if (selectedMenu) {
+            onSelectMenu(selectedMenu);
+        }
     }
 }
 
+/**
+ * 
+ * Y doesn work??????????
+ * @param {*} name 
+ * @param {*} value 
+ * @param {*} days 
+ */
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
@@ -26,6 +39,11 @@ function setCookie(name,value,days) {
     document.cookie = name + "=" + (value || "")  + expires + ", path=/";
 }
 
+/**
+ * 
+ * Y doesn work??????????
+ * @param {*} name 
+ */
 function getCookie(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
@@ -37,6 +55,11 @@ function getCookie(name) {
     return null;
 }
 
+/**
+ * 
+ * Y doesn work??????????
+ * @param {*} name 
+ */
 function eraseCookie(name) {   
     document.cookie = name+'=; Max-Age=-99999999;';  
 }
@@ -61,6 +84,7 @@ function onSelectMenu(menuId) {
 
         if (defaultMenu == menuId) {
             element.className = 'top-menu-selected';
+            window.localStorage.setItem(localSelectedMenuStorageKey, menuId);
         } else {
             element.className = undefined;
         }
