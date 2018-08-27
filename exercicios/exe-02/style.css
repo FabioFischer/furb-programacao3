@@ -93,9 +93,20 @@ input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 }
 
 .container-wrap table {
-    border: 0px;
     outline: none;
+    font: 13px Arial, Helvetica, sans-serif;
+    border: 1;
+}
+
+.container-wrap table th {
+    font-size: 15px !important;
+    padding-bottom: 3%;
     color: white;
+}
+
+.container-wrap table tr {
+    text-align: center;
+    color: rgb(204, 204, 204);
 }
 
 .container-wrap ::placeholder {

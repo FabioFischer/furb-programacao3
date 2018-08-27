@@ -151,7 +151,7 @@ function addDataRow(tableBody, data) {
     
     for (let key of Object.getOwnPropertyNames(new Hero())) {
         let cell = document.createElement("td"), value = data[key];
-        if (!value) value = '';
+        if (!value) value = ' - ';
 
         cell.appendChild(
             document.createTextNode(value)
